@@ -53,7 +53,7 @@ def calcular_calorias_quemadas(tipo_ejercicio, minutos):
     if tipo_ejercicio not in tasas:
         return 0
 
-    return round(tasas[tipo_ejercicio] + minutos)
+    return round(tasas[tipo_ejercicio] * minutos)
 
 
 def calcular_macros_objetivo(calorias_objetivo, objetivo):
