@@ -1,0 +1,46 @@
+name: Pipeline CI - NutriStock
+
+on:
+  push:
+    branches: [ main, feature/** ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  ci-nutristock:
+    name: Tests y análisis de código
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 1 - Clonar repositorio
+        uses: actions/checkout@v4
+
+      - name: 2 - Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 3 - Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest flake8
+
+      - name: 4 - Verificar estilo con flake8
+        run: |
+          flake8 src/ tests/ --max-line-length=100
+
+      - name: 5 - Ejecutar tests unitarios
+        run: |
+          pytest tests/ -v
+
+      - name: 6 - Informe de estado
+        if: always()
+        run: |
+          echo "================================="
+          echo "  INFORME DEL PIPELINE"
+          echo "================================="
+          echo "Repositorio : ${{ github.repository }}"
+          echo "Rama        : ${{ github.ref_name }}"
+          echo "Commit      : ${{ github.sha }}"
+          echo "Estado      : ${{ job.status }}"
+          echo "================================="
