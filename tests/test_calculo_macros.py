@@ -1,11 +1,11 @@
 import sys
 import os
+
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from src.calculo_macros import (
+from src.calculo_macros import (  # noqa: E402
     calcular_tdee,
     calcular_calorias_quemadas,
-    calcular_macros_objetivo,
     sumar_macros_del_dia,
     validar_ingrediente
 )
