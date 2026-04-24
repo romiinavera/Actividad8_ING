@@ -77,6 +77,15 @@ El pipeline se encuentra definido en el siguiente archivo:
 ```
 
 ---
+### 5.2 Funcionamiento de la Integración Continua en el proyecto
+
+La Integración Continua en este proyecto se basa en la ejecución automática de un pipeline configurado en GitHub Actions. Cada vez que se realiza un push o se crea un Pull Request, el sistema ejecuta una serie de validaciones sobre el código.
+
+Estas validaciones incluyen la instalación de dependencias, la verificación de estándares de estilo mediante Flake8 y la ejecución de pruebas unitarias con Pytest. En caso de que alguna de estas etapas falle, el pipeline se detiene e informa el error, impidiendo la integración del código a la rama principal.
+
+De esta manera, se asegura que únicamente se integren cambios que cumplan con los criterios de calidad definidos por el equipo.
+
+---
 
 ## 6. Funcionamiento del pipeline
 
