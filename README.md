@@ -3,7 +3,7 @@
 ## 1. Descripción del proyecto
 El presente repositorio corresponde al desarrollo de un módulo funcional de la aplicación **NutriStock**, orientada a asistir a los usuarios en la gestión de su alimentación mediante el uso de información nutricional y automatización de procesos.
 
-En el marco de la Actividad N°8, se implementan prácticas de Gestión de la Configuración** e **Integración Continua (CI) **, con el objetivo de automatizar la validación del código y garantizar su calidad antes de ser integrado a la rama principal.
+En el marco de la Actividad N°8, se implementan prácticas de Gestión de la Configuración e Integración Continua (CI), con el objetivo de automatizar la validación del código y garantizar su calidad antes de ser integrado a la rama principal.
 
 ---
 
